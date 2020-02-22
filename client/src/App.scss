@@ -1,0 +1,305 @@
+
+$background-color: #cccccc;
+$chat-container: 60%;
+$input-background: #dddddd;
+$background:rgb(253, 253, 253);
+$text-color: rgb(58, 58, 58);
+
+
+
+@mixin flex-basic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}  
+
+@mixin background-image {
+  position: relative;
+  background-size: 500px;
+  background-position: 100% 80%;
+  min-width: 300px;
+  background-repeat: no-repeat;
+  height: calc(100vh - 82px);
+}
+
+@mixin submit-input {
+  background: #575ed8; 
+  color: whitesmoke;
+}
+
+@mixin drawings-listings-container {
+  padding: 60px 30px;
+  h4{
+    color: $text-color;
+    text-align: left;
+  }
+}
+
+
+body {
+  font: 300 .9em "Lato", sans-serif;
+  background: $background;
+
+}
+
+.app {
+  text-align: center;
+}
+
+
+label {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 20px;
+}
+
+input{
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background: #eee;
+  border: 0;
+  display: block;
+  width: 100%;
+  background: rgba($input-background, 0.8);
+  border-bottom: 1px solid #eee;
+  font-family: Nunito;
+  font-size: 16px;
+}
+
+.custom-btn{
+  background: #575ed8;
+  color: #fff;
+  font-size: 18px;
+  border: 0;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+}
+
+.app-header {
+  background-color: $background-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+
+.btn {
+  color: rgba(250, 250, 250, 0.8);
+  padding: 20px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin: auto 5px;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.5)
+}
+
+
+.app-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+// HOME
+
+.home-page-article {
+  position: relative;
+  h3 {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: $text-color;
+    z-index: 10;
+  }
+  div {
+    position: relative;
+    background-image: url("images/home-background-01.png");
+    background-size: 800px;
+    background-repeat: no-repeat;
+    background-position: 80% 50%;
+    height: calc(100vh - 82px);
+  }
+}
+
+
+// PROFILE
+
+h6 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  color: $text-color;
+}
+
+.profile-drawings {
+  background-image: url("images/profile-products-background.png"); 
+  @include background-image
+
+}
+.profile-listings{
+  background-image: url("images/profile-listings-background.png"); 
+  @include background-image;
+
+}
+
+.profile-bought-drawings{
+  padding-top: 30px;
+  img{
+    object-fit: cover;
+    width: 200px;
+    height: 100px;
+  }
+}
+
+.drawings-container{
+  @include drawings-listings-container
+}
+
+.listings-container{
+  @include drawings-listings-container
+}
+
+.profile-personal-listings{
+  padding-top: 30px;
+}
+
+
+
+
+.drawing-card-container {
+  margin-bottom: 30px;
+}
+
+.drawing-card-container p, h1{
+  text-align: left;  
+  color: $text-color;
+}
+
+.drawings{
+  padding-top: 40px;
+  // background: #353740;
+}
+
+
+
+
+
+/* NAVBAR */
+
+.nav-link {
+  color: $text-color;
+  text-decoration: none;
+  margin-right: 20px;
+  &:hover {
+    color: lighten($color: $text-color, $amount: 0.6)
+  }
+}
+
+
+/* FORMS */
+
+
+.form-container{
+  // background-color: rbga(255, 255, 255, 0.5);
+  // height: calc(100vh - 82px);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  padding: 50px;
+
+}
+
+.input-form-container{
+  // background: $background;
+  // color: $text-color;
+  // text-align: left;
+}
+
+.submit-input{
+  @include submit-input
+}
+
+
+.input-form-container h2 {
+  margin-bottom: 30px;
+}
+
+.error-auth {
+  background: #e33d27;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+//DRAWINGS
+
+.link{
+  color: $text-color;
+  text-decoration: none;
+  box-sizing: border-box;
+
+}
+
+.product-card-img{
+  height: 150px;
+  object-fit: cover;
+}
+
+.products article{
+  background-color: darken($color: $background-color, $amount: 1);
+  margin-bottom: 20px;
+}
+
+.drawing-detail{
+  padding: 30px;
+  p, h2 {
+    text-align: left;
+  }
+  img{
+    margin-top: 30px;
+  }
+  button{
+    text-align: center;
+    display: block;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
